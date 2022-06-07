@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/search',methods=["POST"])
 def hello_world():
+    query = request.form.get('query')
     return 'Hello World!'
 
 
